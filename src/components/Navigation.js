@@ -22,12 +22,8 @@ function Navigation() {
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">PC/Storage</Nav.Link>
             <NavDropdown title="More" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Catch Pokemon</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">Pokedex Page</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Team Stats</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                PokeDex Page
-              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
