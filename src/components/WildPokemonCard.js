@@ -4,7 +4,7 @@ import CatchButton from './CatchButton'
 import Card from 'react-bootstrap/Card';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Stack from 'react-bootstrap/Stack'
-import Card from 'react-bootstrap/Card';
+
 
 function WildPokemonCard() {
   return (
