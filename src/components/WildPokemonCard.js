@@ -1,7 +1,8 @@
-import Button from 'react-bootstrap/Button';
+import FleeButton from './FleeButton'
+import CatchButton from './CatchButton'
 import Card from 'react-bootstrap/Card';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
-
+import Stack from 'react-bootstrap/Stack'
 
 function WildPokemonCard() {
   return (
@@ -10,8 +11,10 @@ function WildPokemonCard() {
       <Card.Body>
         <Card.Title>Wild Pokemon Name</Card.Title>
         <ButtonGroup>
-          <Button variant="primary">FLEE</Button>
-          <Button variant="secondary">PokeBall</Button>
+            <Stack gap={3} direction='horizontal'>
+                <FleeButton/>
+            <CatchButton/>
+            </Stack>
         </ButtonGroup>
         
       </Card.Body>

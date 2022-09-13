@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Stack from 'react-bootstrap/Stack'
 
+
 //requires passing TeamCard array of pokemon
 //map the array and return a card with a picture of each pokemon
 
