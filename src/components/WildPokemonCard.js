@@ -2,15 +2,13 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 
+
 function WildPokemonCard() {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" alt='Wild Poke Img'/>
+    <Card className='text-center mx-auto' style={{ width: '40rem'}}>
+      <Card.Img variant="top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png" alt='Wild Poke Img'/>
       <Card.Body>
         <Card.Title>Wild Pokemon Name</Card.Title>
-        <Card.Text>
-          Team Name
-        </Card.Text>
         <ButtonGroup>
           <Button variant="primary">FLEE</Button>
           <Button variant="secondary">PokeBall</Button>
