@@ -7,9 +7,10 @@ import Stack from 'react-bootstrap/Stack'
 function Home(){
     return(
         <div>
-            <Navigation/>
+            
             <Container>
                 <Stack gap={3}>
+                    <Navigation/>
                     <TeamCard/>
                     <WildPokemonCard/>
                 </Stack>

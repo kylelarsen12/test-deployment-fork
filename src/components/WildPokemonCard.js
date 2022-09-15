@@ -7,12 +7,13 @@ import Stack from 'react-bootstrap/Stack'
 
 
 function WildPokemonCard() {
-  return (
-    <Card className='text-center mx-auto' style={{ width: '30rem'}}>
-      <Card.Img variant="top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png" alt='Wild Poke Img'/>
-      <Card.Body>
-        <Card.Title>Wild Pokemon Name</Card.Title>
 
+
+  return (
+    <Card className='text-center mx-auto' border='primary' style={{ width: '30rem'}}>
+      <Card.Img variant="top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png" alt='Wild Poke Img' style={{ width: '30rem'}}/>
+      <Card.Title>Wild Pokemon Name</Card.Title>
+      <Card.Body>
         <ButtonGroup>
             <Stack gap={3} direction='horizontal'>
                 <FleeButton/>

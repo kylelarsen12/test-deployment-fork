@@ -1,10 +1,10 @@
 
-import Home from './components/Home'
+import TeamStats from "./components/TeamStats";
 
 function App() {
   return (
     <div>
-    <Home/>
+    <TeamStats/>
     </div>
   );
 }
