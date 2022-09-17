@@ -6,13 +6,14 @@ import Stack from 'react-bootstrap/Stack'
 
 
 function Home(props){
+    console.log(props)
     return(
         <div>
             <Container>
                 <Stack gap={3}>
                     <Navigation/>
                     <TeamCard/>
-                    <WildPokemonCard pokeId={props.data} handleFetchData={props.handleFetchData}/>
+                    <WildPokemonCard data={props.data} handleFetchData={props.handleFetchData} setId={props.setId}/>
                 </Stack>
 
             </Container>

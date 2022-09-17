@@ -1,9 +1,15 @@
 import Button from 'react-bootstrap/Button';
 
 function FleeButton(props) {
+  const handleClick= ()=>{
+    let randId = Math.floor(Math.random()*150)
+    props.setId(randId)
+    props.handleFetchData()
+    
+  }
   return (
     <>
-      <Button onClick={props.handleFetchData} variant="danger" size="lg">Flee</Button>{' '}
+      <Button onClick={handleClick} variant="danger" size="lg">Flee</Button>{' '}
     </>
   );
 }

@@ -7,16 +7,16 @@ import Stack from 'react-bootstrap/Stack'
 
 
 function WildPokemonCard(props) {
-console.log(props.pokeId)
+console.log(props)
 
   return (
     <Card className='text-center mx-auto' border='primary' style={{ width: '30rem'}}>
-      <Card.Img variant="top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png" alt='Wild Poke Img' style={{ width: '30rem'}}/>
-      <Card.Title>{props.pokeId.id}</Card.Title>
+      <Card.Img variant="top" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${props.data.id}.png`} alt='Wild Poke Img' style={{ width: '30rem'}}/>
+      <Card.Title>{props.data.name.toUpperCase()}</Card.Title>
       <Card.Body>
         <ButtonGroup>
             <Stack gap={3} direction='horizontal'>
-                <FleeButton handleFetchData={props.handleFetchData}/>
+                <FleeButton setId={props.setId} handleFetchData={props.handleFetchData}/>
             <CatchButton/>
             </Stack>
         </ButtonGroup>
