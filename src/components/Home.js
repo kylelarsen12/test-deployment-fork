@@ -4,16 +4,17 @@ import TeamCard from './TeamCard';
 import WildPokemonCard from './WildPokemonCard';
 import Stack from 'react-bootstrap/Stack'
 
-function Home(){
+
+function Home(props){
     return(
         <div>
-            
             <Container>
                 <Stack gap={3}>
                     <Navigation/>
                     <TeamCard/>
-                    <WildPokemonCard/>
+                    <WildPokemonCard pokeId={props.data} handleFetchData={props.handleFetchData}/>
                 </Stack>
+
             </Container>
         </div>
     )

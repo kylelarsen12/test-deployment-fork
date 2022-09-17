@@ -1,9 +1,9 @@
 import Button from 'react-bootstrap/Button';
 
-function FleeButton() {
+function FleeButton(props) {
   return (
     <>
-      <Button variant="danger" size="lg">Flee</Button>{' '}
+      <Button onClick={props.handleFetchData} variant="danger" size="lg">Flee</Button>{' '}
     </>
   );
 }

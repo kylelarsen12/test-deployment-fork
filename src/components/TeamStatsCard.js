@@ -1,9 +1,8 @@
 import Card from "react-bootstrap/Card"
-import RemoveButton from "./RemoveButton"
+
 import Stack from "react-bootstrap/Stack";
 import CardGroup from "react-bootstrap/CardGroup";
-import EditButton from "./EditButton";
-import AddButton from "./AddButton";
+
 
 function TeamStatsCard () {
   return (
@@ -40,14 +39,8 @@ function TeamStatsCard () {
               </Card>
             </Stack>
           </Card.Body>
-          <Card.Body>
-            
-            
-          </Card.Body>
         </Stack>
-        <AddButton/>
-        <EditButton/>
-        <RemoveButton/>
+        
       </Card>
     </CardGroup>
     </div>
