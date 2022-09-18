@@ -1,9 +1,9 @@
 import Button from 'react-bootstrap/Button';
 
-function AddButton() {
+function AddButton(props) {
   return (
     <>
-      <Button variant="success" size="lg">Add Pokemon</Button>
+      <Button onClick={props.handleAddTeamClick} variant="success" size="lg">Add Team</Button>
     </>
   );
 }

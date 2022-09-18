@@ -5,7 +5,6 @@ function FleeButton(props) {
     let randId = Math.floor(Math.random()*150)
     props.setId(randId)
     props.handleFetchData()
-    
   }
   return (
     <>

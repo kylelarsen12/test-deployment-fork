@@ -1,15 +1,15 @@
-import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 
-function CatchButton() {
-  const [ userID, setUserId ] = useState(0)
+function CatchButton(props) {
+  
 
-  function handlePokeBall(e){
-    e.preventDefault()
+  function handleClick(){
+    props.handleCatch(props.data.id)
   }
+
   return (
     <>
-      <Button onClick={handlePokeBall} variant="success" size="lg">PokeBall</Button>
+      <Button onClick={handleClick} variant="success" size="lg">PokeBall</Button>
     </>
   );
 }
