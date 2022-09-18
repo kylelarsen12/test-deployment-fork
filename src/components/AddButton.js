@@ -1,9 +1,14 @@
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom'
 
-function AddButton(props) {
+function AddButton() {
+  const navigate = useNavigate()
+  const handleAddTeamClick = ()=>{
+    navigate('/add_team')
+  }
   return (
     <>
-      <Button onClick={props.handleAddTeamClick} variant="success" size="lg">Add Team</Button>
+      <Button onClick={handleAddTeamClick} variant="success" size="lg">Add Team</Button>
     </>
   );
 }
