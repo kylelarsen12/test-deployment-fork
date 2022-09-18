@@ -7,6 +7,7 @@ import TeamStatsCard from './components/TeamStatsCard'
 import AddTeam from './pages/AddTeam'
 import Home from './pages/Home'
 import TeamStats from './pages/TeamStats'
+import PokeDex from './pages/PokeDex'
 
 
 function App() {
@@ -56,6 +57,7 @@ function handleCatch(){
   <Route path="/" element={<Home data={data} handleFetchData={handleFetchData} setId={setId} handleCatch={handleCatch}/>}/>
   <Route path="/team_stats" element={<TeamStats handleCatch={handleCatch}/>}/>
   <Route path='/add_team' element={<AddTeam/>}/>
+  <Route path='/pokedex' element={<PokeDex/>}/>
 </Routes>
 </BrowserRouter>
     

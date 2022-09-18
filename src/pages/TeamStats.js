@@ -14,7 +14,7 @@ function TeamStats (props) {
                 <AddButton handleCatch={props.handleCatch}/>
                 <EditButton/>
                 <RemoveButton/>
-        </Stack>
+            </Stack>
         </div>
     )
 }
