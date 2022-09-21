@@ -1,5 +1,5 @@
-import FleeButton from "./FleeButton";
-import CatchButton from "./CatchButton";
+import ReleaseButton from "./ReleaseButton";
+import AddButton from "./AddButton";
 import Card from "react-bootstrap/Card";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Stack from "react-bootstrap/Stack";
@@ -21,9 +21,8 @@ function CapturedCard(props) {
       <Card.Body>
         <ButtonGroup>
           <Stack gap={3} direction="horizontal">
-            <FleeButton //Release
-            />
-            <CatchButton /> {/*Add to team btn*/}
+            <ReleaseButton handleCatch={props.handleCatch}/>
+            <AddButton handleCatch={props.handleCatch}/>
           </Stack>
         </ButtonGroup>
       </Card.Body>
