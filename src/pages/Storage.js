@@ -2,20 +2,34 @@ import CapturedCard from "../components/CapturedCard";
 import Navigation from "../components/Navigation";
 import { useState, useEffect } from "react";
 
-function PokeDex(props) {
+function Storage(props) {
   const [pokeData, setPokeData] = useState([]);
 
   useEffect(() => {
     const fetchPokemon = async () => {
-      const response = await props.getAllPokemon();
-      const resData = await response.json();
-      setPokeData(resData.results);
+      try {
+        await props
+          .getAllPokemon()
+          .then((res) => {
+            return res;
+          })
+          .then((res) => setPokeData(res));
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetchPokemon();
-  });
+  }, []);
 
-  const renderPokemon = pokeData.map((data, i) => {
-    return <CapturedCard key={i} data={data} />;
+  /*
+  .then(() => {
+    const resData = response.json();
+    setPokeData(resData.results);
+  });
+  */
+
+  const renderPokemon = pokeData.map((pokemon, i) => {
+    return <CapturedCard key={i} data={pokemon} />;
   });
 
   return (
@@ -26,7 +40,7 @@ function PokeDex(props) {
   );
 }
 
-export default PokeDex;
+export default Storage;
 
 /*
 function PokeDex(props) {

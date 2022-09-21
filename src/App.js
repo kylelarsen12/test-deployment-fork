@@ -6,7 +6,7 @@ import TeamStatsCard from "./components/TeamStatsCard";
 import AddTeam from "./pages/AddTeam";
 import Home from "./pages/Home";
 import TeamStats from "./pages/TeamStats";
-import PokeDex from "./pages/PokeDex";
+import Storage from "./pages/Storage";
 
 function App() {
   const [data, setData] = useState({});
@@ -61,6 +61,7 @@ function App() {
       });
       const data = await response.json();
       setData(data);
+      return data;
     } catch (error) {
       console.log(error);
     }
@@ -87,8 +88,8 @@ function App() {
           />
           <Route path="/add_team" element={<AddTeam />} />
           <Route
-            path="/pokedex"
-            element={<PokeDex data={data} getAllPokemon={getAllPokemon} />}
+            path="/storage"
+            element={<Storage data={data} getAllPokemon={getAllPokemon} />}
           />
         </Routes>
       </BrowserRouter>

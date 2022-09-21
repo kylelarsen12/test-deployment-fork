@@ -14,7 +14,7 @@ function CapturedCard(props) {
       <Card.Img
         variant="top"
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.data.id}.png`}
-        alt="Stored Poke Img"
+        alt={`stored pokemon img ${props.data.id}`}
         style={{ width: "30rem" }}
       />
       <Card.Title>{props.data.name}</Card.Title>

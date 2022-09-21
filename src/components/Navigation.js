@@ -23,8 +23,8 @@ function Navigation() {
             <Stack direction="horizontal" gap={3}>
               <Nav.Link href="/">Home</Nav.Link>
               <NavDropdown title="Stats" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/pokedex">
-                  Pokedex Page
+                <NavDropdown.Item href="/storage">
+                  Storage Page
                 </NavDropdown.Item>
                 <NavDropdown.Item href="/team_stats">
                   Team Stats
