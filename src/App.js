@@ -31,10 +31,9 @@ function App() {
       const data = await response.json();
       setData(data);
       console.log(data);
-      console.log(url);
       return data;
     } catch (err) {
-      console.error("FUCKED");
+      console.error(err);
     }
   }
 
@@ -48,7 +47,8 @@ function App() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       }).then(handleFetchData());
-      setCaught(data.id);
+      const data = await response.json();
+      setData(data);
       return <TeamStatsCard />;
     } catch (error) {
       console.log(error);
