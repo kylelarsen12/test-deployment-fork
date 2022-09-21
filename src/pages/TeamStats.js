@@ -5,7 +5,11 @@ function TeamStats(props) {
   return (
     <div>
       <Navigation />
-      <TeamStatsCard data={props.data} getAllOnTeam={props.getAllOnTeam} />
+      <TeamStatsCard
+        data={props.data}
+        getAllOnTeam={props.getAllOnTeam}
+        handleRemoveFromTeam={props.handleRemoveFromTeam}
+      />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Card from "react-bootstrap/Card";
+import RemoveFromTeamBtn from "./RemoveFromTeamBtn";
 import { useEffect, useState } from "react";
 
 import Stack from "react-bootstrap/Stack";
@@ -33,6 +34,10 @@ function TeamStatsCard(props) {
           variant="top"
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeData[i].id}.png`}
           alt="Team Img"
+        />
+        <RemoveFromTeamBtn
+          handleRemoveFromTeam={props.handleRemoveFromTeam}
+          data={props.data}
         />
       </Card>
     );

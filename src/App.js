@@ -107,6 +107,21 @@ function App() {
     }
   }
 
+  async function handleRemoveFromTeam(id) {
+    try {
+      const response = await fetch(apiURL + "/storedPokemon/offTeam/" + id, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(this.data),
+      });
+      const data = await response.json();
+      setData(data);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
       <BrowserRouter>
@@ -125,7 +140,13 @@ function App() {
           />
           <Route
             path="/team_stats"
-            element={<TeamStats data={data} getAllOnTeam={getAllOnTeam} />}
+            element={
+              <TeamStats
+                data={data}
+                getAllOnTeam={getAllOnTeam}
+                handleRemoveFromTeam={handleRemoveFromTeam}
+              />
+            }
           />
           <Route path="/add_team" element={<AddTeam />} />
           <Route
