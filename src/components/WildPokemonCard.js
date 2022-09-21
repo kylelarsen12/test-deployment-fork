@@ -25,7 +25,7 @@ function WildPokemonCard(props) {
               setId={props.setId}
               handleFetchData={props.handleFetchData}
             />
-            <CatchButton handleCatch={props.handleCatch} />
+            <CatchButton handleCatch={props.handleCatch} setId={props.setId} />
           </Stack>
         </ButtonGroup>
       </Card.Body>

@@ -42,9 +42,17 @@ function App() {
     fetchData(apiURL);
   }
 
-  function handleCatch() {
-    setCaught(data.id);
-    return <TeamStatsCard />;
+  async function handleCatch() {
+    try {
+      const response = await fetch(apiURL + "/storedPokemon", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      }).then(handleFetchData());
+      setCaught(data.id);
+      return <TeamStatsCard />;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
