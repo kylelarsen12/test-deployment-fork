@@ -67,6 +67,25 @@ function App() {
     }
   }
 
+  async function handleReleasePokemon(id) {
+    try {
+      const response = await fetch(apiURL + "/storedPokemon/" + id, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function handleAddToTeam() {
+    try {
+      const response = await fetch(apiURL);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
       <BrowserRouter>
@@ -89,7 +108,13 @@ function App() {
           <Route path="/add_team" element={<AddTeam />} />
           <Route
             path="/storage"
-            element={<Storage data={data} getAllPokemon={getAllPokemon} />}
+            element={
+              <Storage
+                data={data}
+                getAllPokemon={getAllPokemon}
+                handleReleasePokemon={handleReleasePokemon}
+              />
+            }
           />
         </Routes>
       </BrowserRouter>
