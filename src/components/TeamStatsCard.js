@@ -11,12 +11,7 @@ function TeamStatsCard(props) {
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
-        await props
-          .getAllOnTeam()
-          .then((res) => {
-            return res;
-          })
-          .then((res) => setPokeData(res));
+        await props.getAllOnTeam().then((res) => setPokeData(res));
       } catch (error) {
         console.log(error);
       }
@@ -28,16 +23,18 @@ function TeamStatsCard(props) {
 
   const renderPokemon = pokeData.map((pokemon, i) => {
     return (
-      <Card className="text-center mx-auto" key={i} data={pokemon}>
-        <Card.Title>{pokeData[i].name}</Card.Title>
+      <Card className="text-center mx-auto" key={pokemon._id} data={pokemon}>
+        <Card.Title>{pokemon.name}</Card.Title>
         <Card.Img
           variant="top"
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeData[i].id}.png`}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
           alt="Team Img"
         />
         <RemoveFromTeamBtn
           handleRemoveFromTeam={props.handleRemoveFromTeam}
-          data={props.data}
+          // data={props.data}
+          id={pokemon._id}
+          name={pokemon.name}
         />
       </Card>
     );

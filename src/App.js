@@ -13,7 +13,8 @@ function App() {
   const [id, setId] = useState(Math.floor(Math.random() * 150));
   const [caught, setCaught] = useState();
 
-  const apiURL = `http://localhost:5050/pokemon`;
+  //const apiURL = `http://localhost:5050/pokemon`;
+  const apiURL = process.env.REACT_APP_API_URL;
 
   //const endpoint = 'ditto'
 
@@ -30,7 +31,6 @@ function App() {
       //    .../team   .../storedpokemon
       const data = await response.json();
       setData(data);
-      return data;
     } catch (err) {
       console.error(err);
     }
@@ -112,7 +112,7 @@ function App() {
       const response = await fetch(apiURL + "/storedPokemon/offTeam/" + id, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(this.data),
+        //body: JSON.stringify(this.data),
       });
       const data = await response.json();
       setData(data);
