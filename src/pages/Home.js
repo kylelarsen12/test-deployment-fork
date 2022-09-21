@@ -3,6 +3,8 @@ import Navigation from "../components/Navigation";
 import TeamCard from "../components/TeamCard";
 import WildPokemonCard from "../components/WildPokemonCard";
 import Stack from "react-bootstrap/Stack";
+import { useState, useEffect } from "react";
+import { render } from "@testing-library/react";
 
 function Home(props) {
   return (
@@ -16,7 +18,7 @@ function Home(props) {
             setId={props.setId}
             handleCatch={props.handleCatch}
           />
-          <TeamCard />
+          <TeamCard data={props.data} getAllOnTeam={props.getAllOnTeam} />
         </Stack>
       </Container>
     </div>

@@ -67,6 +67,20 @@ function App() {
     }
   }
 
+  async function getAllOnTeam() {
+    try {
+      const response = await fetch(apiURL + "/myTeam", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await response.json();
+      setData(data);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   async function handleReleasePokemon(id) {
     try {
       const response = await fetch(apiURL + "/storedPokemon/" + id, {
@@ -105,12 +119,13 @@ function App() {
                 handleFetchData={handleFetchData}
                 setId={setId}
                 handleCatch={handleCatch}
+                getAllOnTeam={getAllOnTeam}
               />
             }
           />
           <Route
             path="/team_stats"
-            element={<TeamStats handleCatch={handleCatch} />}
+            element={<TeamStats data={data} getAllOnTeam={getAllOnTeam} />}
           />
           <Route path="/add_team" element={<AddTeam />} />
           <Route

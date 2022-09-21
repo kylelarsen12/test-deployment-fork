@@ -1,11 +1,44 @@
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import Stack from "react-bootstrap/Stack";
+import { useState, useEffect } from "react";
 
 //requires passing TeamCard array of pokemon
 //map the array and return a card with a picture of each pokemon
 
 function TeamCard(props) {
+  const [pokeData, setPokeData] = useState([]);
+
+  useEffect(() => {
+    const fetchPokemon = async () => {
+      try {
+        await props
+          .getAllOnTeam()
+          .then((res) => {
+            return res;
+          })
+          .then((res) => setPokeData(res));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchPokemon();
+  }, []);
+
+  console.log(pokeData);
+
+  const renderPokemon = pokeData.map((pokemon, i) => {
+    return (
+      <Card className="text-center mx-auto" key={i} data={pokemon}>
+        <Card.Img
+          variant="top"
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeData[i].id}.png`}
+          alt="Team Img"
+        />
+      </Card>
+    );
+  });
+
   return (
     <CardGroup>
       <Card
@@ -16,24 +49,7 @@ function TeamCard(props) {
         <Stack gap={2}>
           <Card.Body>
             <Stack direction="horizontal" gap={3}>
-              <Card className="text-center mx-auto">
-                <Card.Img variant="top" src="Team pic" alt="Team Img" />
-              </Card>
-              <Card className="text-center mx-auto">
-                <Card.Img variant="top" src="Team pic" alt="Team Img" />
-              </Card>
-              <Card className="text-center mx-auto">
-                <Card.Img variant="top" src="Team pic" alt="Team Img" />
-              </Card>
-              <Card className="text-center mx-auto">
-                <Card.Img variant="top" src="Team pic" alt="Team Img" />
-              </Card>
-              <Card className="text-center mx-auto">
-                <Card.Img variant="top" src="Team pic" alt="Team Img" />
-              </Card>
-              <Card className="text-center mx-auto">
-                <Card.Img variant="top" src="Team pic" alt="Team Img" />
-              </Card>
+              {renderPokemon}
             </Stack>
           </Card.Body>
           <Card.Body>
