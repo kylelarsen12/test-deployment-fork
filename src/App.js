@@ -30,7 +30,6 @@ function App() {
       //    .../team   .../storedpokemon
       const data = await response.json();
       setData(data);
-      console.log(data);
       return data;
     } catch (err) {
       console.error(err);
@@ -49,7 +48,19 @@ function App() {
       }).then(handleFetchData());
       const data = await response.json();
       setData(data);
-      return <TeamStatsCard />;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function getAllPokemon() {
+    try {
+      const response = await fetch(apiURL + "/myPokemon", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await response.json();
+      setData(data);
     } catch (error) {
       console.log(error);
     }
@@ -75,7 +86,10 @@ function App() {
             element={<TeamStats handleCatch={handleCatch} />}
           />
           <Route path="/add_team" element={<AddTeam />} />
-          <Route path="/pokedex" element={<PokeDex />} />
+          <Route
+            path="/pokedex"
+            element={<PokeDex data={data} getAllPokemon={getAllPokemon} />}
+          />
         </Routes>
       </BrowserRouter>
 
