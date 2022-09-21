@@ -21,15 +21,15 @@ function Storage(props) {
     fetchPokemon();
   }, []);
 
-  /*
-  .then(() => {
-    const resData = response.json();
-    setPokeData(resData.results);
-  });
-  */
-
   const renderPokemon = pokeData.map((pokemon, i) => {
-    return <CapturedCard key={i} data={pokemon} />;
+    return (
+      <CapturedCard
+        key={i}
+        data={pokemon}
+        handleReleasePokemon={props.handleReleasePokemon}
+        setId={props.setId}
+      />
+    );
   });
 
   return (

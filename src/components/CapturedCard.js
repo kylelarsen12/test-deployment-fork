@@ -21,8 +21,12 @@ function CapturedCard(props) {
       <Card.Body>
         <ButtonGroup>
           <Stack gap={3} direction="horizontal">
-            <ReleaseButton handleCatch={props.handleCatch}/>
-            <AddButton handleCatch={props.handleCatch}/>
+            <ReleaseButton
+              handleReleasePokemon={props.handleReleasePokemon}
+              data={props.data}
+              setId={props.setId}
+            />
+            <AddButton handleCatch={props.handleCatch} />
           </Stack>
         </ButtonGroup>
       </Card.Body>
