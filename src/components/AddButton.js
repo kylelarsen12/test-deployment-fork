@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom'
 
 function AddButton() {
   const navigate = useNavigate()
-  const handleAddTeamClick = ()=>{
+  const handleAddToTeam = ()=>{
     navigate('/add_team')
   }
   return (
     <>
-      <Button onClick={handleAddTeamClick} variant="success" size="lg">Add Team</Button>
+      <Button onClick={handleAddToTeam} variant="success" size="lg">Add to Team</Button>
     </>
   );
 }
