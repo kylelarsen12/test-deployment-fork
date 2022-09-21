@@ -78,9 +78,15 @@ function App() {
     }
   }
 
-  async function handleAddToTeam() {
+  async function handleAddToTeam(id) {
     try {
-      const response = await fetch(apiURL);
+      const response = await fetch(apiURL + "/storedPokemon/" + id, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await response.json();
+      setData(data);
+      return data;
     } catch (error) {
       console.log(error);
     }
@@ -113,6 +119,7 @@ function App() {
                 data={data}
                 getAllPokemon={getAllPokemon}
                 handleReleasePokemon={handleReleasePokemon}
+                handleAddToTeam={handleAddToTeam}
               />
             }
           />

@@ -26,7 +26,11 @@ function CapturedCard(props) {
               data={props.data}
               setId={props.setId}
             />
-            <AddButton handleCatch={props.handleCatch} />
+            <AddButton
+              handleAddToTeam={props.handleAddToTeam}
+              data={props.data}
+              setId={props.setId}
+            />
           </Stack>
         </ButtonGroup>
       </Card.Body>

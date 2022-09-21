@@ -28,6 +28,7 @@ function Storage(props) {
         data={pokemon}
         handleReleasePokemon={props.handleReleasePokemon}
         setId={props.setId}
+        handleAddToTeam={props.handleAddToTeam}
       />
     );
   });
