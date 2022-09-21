@@ -1,14 +1,17 @@
 import Button from "react-bootstrap/Button";
 
 function AddButton(props) {
-  const id = props.data._id;
+  const handleSubmit = () => {
+    handleClick();
+    window.alert(`${props.data.name} was added to your team!`);
+  };
   const handleClick = () => {
-    props.handleAddToTeam(id);
+    props.handleAddToTeam(props.data._id);
     console.log(props.data);
   };
   return (
     <>
-      <Button onClick={handleClick} variant="success" size="lg">
+      <Button onClick={handleSubmit} variant="success" size="lg">
         Add to Team
       </Button>
     </>

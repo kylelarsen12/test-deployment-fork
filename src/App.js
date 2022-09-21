@@ -83,6 +83,7 @@ function App() {
       const response = await fetch(apiURL + "/storedPokemon/" + id, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(this.data),
       });
       const data = await response.json();
       setData(data);
