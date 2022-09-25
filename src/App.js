@@ -1,8 +1,5 @@
-//import TeamStats from "./components/TeamStats";
-
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import TeamStatsCard from "./components/TeamStatsCard";
 import AddTeam from "./pages/AddTeam";
 import Home from "./pages/Home";
 import TeamStats from "./pages/TeamStats";
@@ -11,12 +8,8 @@ import Storage from "./pages/Storage";
 function App() {
   const [data, setData] = useState({});
   const [id, setId] = useState(Math.floor(Math.random() * 150));
-  const [caught, setCaught] = useState();
 
-  //const apiURL = `http://localhost:5050/pokemon`;
   const apiURL = process.env.REACT_APP_API_URL;
-
-  //const endpoint = 'ditto'
 
   useEffect(() => {
     fetchData(apiURL);
@@ -27,8 +20,7 @@ function App() {
       const response = await fetch(url, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
-      }); // link to backend localhost:5050 yuh
-      //    .../team   .../storedpokemon
+      });
       const data = await response.json();
       setData(data);
     } catch (err) {
@@ -112,7 +104,6 @@ function App() {
       const response = await fetch(apiURL + "/storedPokemon/offTeam/" + id, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        //body: JSON.stringify(this.data),
       });
       const data = await response.json();
       setData(data);
@@ -162,8 +153,6 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-
-      {/* <TeamCard/> */}
     </div>
   );
 }

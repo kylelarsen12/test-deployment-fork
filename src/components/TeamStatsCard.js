@@ -32,7 +32,6 @@ function TeamStatsCard(props) {
         />
         <RemoveFromTeamBtn
           handleRemoveFromTeam={props.handleRemoveFromTeam}
-          // data={props.data}
           id={pokemon._id}
           name={pokemon.name}
         />

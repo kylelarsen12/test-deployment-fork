@@ -42,22 +42,3 @@ function Storage(props) {
 }
 
 export default Storage;
-
-/*
-function PokeDex(props) {
-    const allPokemon = props.getAllPokemon();
-    console.log(allPokemon);
-    const display = allPokemon.map(() => {
-      return (
-        <CapturedCard data={props.data} getAllPokemon={props.getAllPokemon} />
-      );
-    });
-    console.log(props);
-    return (
-      <div>
-        <Navigation />
-        {display}
-      </div>
-    );
-  }
-  */
